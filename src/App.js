@@ -51,11 +51,19 @@ export default function App() {
   }
   function billAmountHandler() {
     var billAmount = event.target.value;
-    setbillAmount(billAmount);
+    if (billAmount < "0") {
+      setreturnAmount("Bill Amount  can't be negative");
+    } else {
+      setbillAmount(billAmount);
+    }
   }
   function cashGivenHandler() {
     var cashGiven = event.target.value;
-    setcashAmount(cashGiven);
+    if (cashGiven < "0") {
+      setreturnAmount("Cash given  can't be negative");
+    } else {
+      setcashAmount(cashGiven);
+    }
   }
 
   return (
